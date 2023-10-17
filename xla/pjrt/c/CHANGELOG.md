@@ -1,5 +1,9 @@
 # PJRT C API changelog
 
+## 0.35 (Oct 17, 2023)
+
+* Added const to a bunch of lists and value types.
+
 ## 0.34 (Oct 9, 2023)
 
 * Added PJRT_Structure_Type::PJRT_Structure_Type_Profiler.
