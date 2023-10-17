@@ -185,7 +185,8 @@ def make_c_api_client(
 def make_tpu_client(library_path: Optional[str] = None):
   """Returns a TPU client. Defaults to allowing 32 in-flight computations."""
   if not pjrt_plugin_loaded('tpu'):
-    load_pjrt_plugin_dynamically('tpu', library_path or 'libtpu.so')
+    c_api = load_pjrt_plugin_dynamically('tpu', library_path or 'libtpu.so')
+    profiler.register_plugin_profiler(c_api)
   return make_tfrt_tpu_c_api_client()
 
 
